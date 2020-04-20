@@ -117,4 +117,5 @@ async def start_crawl(domain):
 
 
 if __name__ == '__main__':
-    asyncio.run(start_crawl('py4you.com'))
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(start_crawl('py4you.com'))

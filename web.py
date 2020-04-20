@@ -37,7 +37,7 @@ async def page_handler(request):
 async def start_crawler(request):
     data = await request.post()
     domain = data['new_domain']
-    asyncio.run_coroutine_threadsafe(start_crawl(domain), loop)
+    loop.run_coroutine_threadsafe(start_crawl(domain), loop)
     return web.HTTPFound('/')
 
 
